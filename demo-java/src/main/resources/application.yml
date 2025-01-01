@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: seminar.demo
+  jackson:
+    time-zone: UTC
+  datasource:
+    url: jdbc:postgresql://postgres_java:5432/java_database
+    username: java_user
+    password: java_password
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8091
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, health, info
+  endpoint:
+    prometheus:
+      enabled: true
+    health:
+      probes:
+        enabled: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
